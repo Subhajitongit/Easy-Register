@@ -1,20 +1,27 @@
 .container {
-    text-align: center;
-    margin-top: 15%;
+  text-align: center;
+  margin-top: 15%;
 
-    .title {
-        font-size: 70px;
-        margin-bottom: 5%;
+  .title {
+    font-size: 70px;
+    margin-bottom: 5%;
+    
+  }
+
+  .row {
+    width: 50%;
+    margin-left: 25%;
+    display: flex;
+    justify-content: space-around;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 50px;
+      margin-top: 150px;
     }
 
-    .row {
-        width: 50%;
-        margin-left: 25%;
-        display: flex;
-        justify-content: space-around; 
-         
-        a {
-            color: transparent;
-        }
+    a {
+      color: transparent;
     }
+  }
 }
