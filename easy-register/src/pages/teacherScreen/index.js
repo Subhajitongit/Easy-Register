@@ -41,16 +41,16 @@ function Teacher() {
   const handleSubmit = (event) => {
     setTCode(
       location.loaded
-        ? JSON.stringify(location.coordinates.lat.toFixed(3)) +
-            JSON.stringify(location.coordinates.lng.toFixed(3)) +
+        ? JSON.stringify(location.coordinates.lat.toFixed(8)) +
+            JSON.stringify(location.coordinates.lng.toFixed(8)) +
             document.getElementById("name").value
         : "Not available yet" + document.getElementById("name").value
     );
     event.preventDefault();
     console.log(
       location.loaded
-        ? JSON.stringify(location.coordinates.lat.toFixed(3)) +
-            JSON.stringify(location.coordinates.lng.toFixed(3))
+        ? JSON.stringify(location.coordinates.lat.toFixed(8)) +
+            JSON.stringify(location.coordinates.lng.toFixed(8))
         : "Not available yet",
       document.getElementById("name").value
     );
@@ -73,7 +73,7 @@ function Teacher() {
             <Typography component="h1" variant="h5">
               Generate QR
             </Typography>
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            
               <TextField
                 margin="normal"
                 required
@@ -86,12 +86,12 @@ function Teacher() {
               <Button
                 type="submit"
                 fullWidth
+                onClick={handleSubmit}
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
                 Create QR Code
               </Button>
-            </Box>
           </Box>
 
           <QrCode text={tCode} />
